@@ -1,0 +1,49 @@
+Servo myservo;
+
+int pos = 0;
+int myReset = false;
+
+void setup()
+{
+    Particle.function("gong", gong);
+    pinMode(D7, OUTPUT);  
+}
+
+int gong(String command)
+{
+    if(command == "now" && myReset == false)
+    {
+        myservo.attach(D0);
+        myservo.write(150);
+        digitalWrite(D7, HIGH);
+        delay(1330);
+        myservo.detach();
+        digitalWrite(D7, LOW);
+        myReset = true;
+        delay(14400000); //14400000 is 4 hours
+        if(myReset == true)
+        {
+            myservo.attach(D0);
+            myservo.write(10);
+            digitalWrite(D7, HIGH);
+            delay(1125);
+            myservo.detach();
+            digitalWrite(D7, LOW);
+            myReset = false;
+        }
+    }
+}
+
+void loop()
+{
+  if(myReset == true)
+  {
+    myservo.attach(D0);
+    myservo.write(80);
+    digitalWrite(D7, HIGH);
+    delay(1350);
+    myservo.detach();
+    digitalWrite(D7, LOW);
+    myReset = false;
+  }
+}

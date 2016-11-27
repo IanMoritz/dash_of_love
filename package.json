@@ -1,0 +1,25 @@
+{
+  "name": "dash_of_love",
+  "version": "0.1.0",
+  "description": "Amazon dash button sending love",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanMoritz/dash_of_love.git"
+  },
+  "author": "Ian T. Moritz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanMoritz/dash_of_love/issues"
+  },
+  "homepage": "https://github.com/IanMoritz/dash_of_love#readme",
+  "dependencies": {
+    "gmail-sender": "^0.1.2",
+    "johnny-five": "^0.10.0",
+    "keypress": "^0.2.1",
+    "particle-io": "^0.14.0"
+  }
+}
